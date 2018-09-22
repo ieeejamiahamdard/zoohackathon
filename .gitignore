@@ -3,5 +3,6 @@ db.sqlite3
 _pycache_
 .DS_Store
 .venv36
+venv
 migrations
 media
