@@ -1,8 +1,10 @@
 <html>
     <head><title></title></head>
     <body>
-        {% for animals in object_list %}
-           <h1>{{ animals.name }}</h1>
-        {% endfor %}   
+        <center>
+            {% for animal in object_list %}
+            <a  href="{{animal.get_absolute_url}}"> <h1>{{ animal.name }}</h1></a>
+            {% endfor %}   
+        </center>    
     </body>
 </html>

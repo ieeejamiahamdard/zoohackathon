@@ -1,0 +1,14 @@
+<html>
+    <head><title></title></head>
+    <body>
+        <center>
+           <h1>{{ animalName.name }} </h1>
+           <h2>Location: {{animalName.location}}</h2>
+
+           <h3> Products you shouldn't buy </h3>
+            {% for animal in animal_product %}
+                <li>{{animal.name}}</li>
+            {% endfor %}
+        </center>    
+    </body>
+</html>
