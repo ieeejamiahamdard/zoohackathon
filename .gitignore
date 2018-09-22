@@ -1,0 +1,7 @@
+*.pyc
+db.sqlite3
+_pycache_
+.DS_Store
+.venv36
+migrations
+media
