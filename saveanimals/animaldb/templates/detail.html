@@ -1,15 +1,25 @@
 {% load static %}
 <html>
-    <head><title></title></head>
-    <body>
-        <center>
-           <h1>{{ animalName.name }} </h1>
-           <h2>Location: {{animalName.location}}</h2>
 
-           <h3> Products you shouldn't buy </h3>
-            {% for animal in animal_product %}
-                <li>{{animal.name}}</li>
-            {% endfor %}
-        </center>    
-    </body>
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-xs-6">
+                <h1>{{ animalName.name }} </h1>
+                <font face="San-Serif">Location: {{animalName.location}}</font>
+                <h3> Products you shouldn't buy </h3>
+                <img src="{{ animalName.image.url }}" alt="" class="img-responsive">
+                {% for product in animal_product %}
+                <li>{{product.name}}</li>
+                <img src="{{ animal_product.image.url }}" alt="" class="img-responsive">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>
