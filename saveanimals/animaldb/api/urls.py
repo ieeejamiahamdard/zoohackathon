@@ -3,7 +3,7 @@ from rest_framework import routers
 from .views import AnimalDbView, AnimalProductView
 
 router = routers.DefaultRouter()
-router.register('animalsdata',AnimalDbView)
+router.register('report',AnimalDbView)
 router.register('animalsproducts',AnimalProductView)
 
 urlpatterns = [
