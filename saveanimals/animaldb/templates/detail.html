@@ -1,25 +1,44 @@
-{% load static %}
-<html>
+{% extends 'base.html' %}
 
-<head>
-    <title></title>
-</head>
+{% block content %}
+<div style="background-image:url({{animalName.image.url}});  width:100%; height:40%; background-size: cover; box-shadow:inset 0 -10px 40px 10px rgba(0, 0, 0, 0.543); position:absolute; top:0; background-color:rgb(245, 245, 245);">
+<div style="position:absolute; bottom:0px; width:100%; letter-spacing: 2px; text-transform: uppercase; height:30px; text-align: center; color:white; ">{{ animalName.name }}</div>
+</div>
+<div style="width:100%; height:auto; background:rgb(250, 250, 250); position:absolute; top:40%; ">
+<div style="width:100%; height:40px; text-align: center; position: sticky; top:0; font-size: 22px; letter-spacing: 2px; text-transform: uppercase; color: white; background: rgb(49, 194, 90);">You Shouldn't Buy</div>
+{% for product in animal_product %}   
+<div style="width:100%; height:100px; display: flex; align-items: center; background:rgb(245, 245, 245); margin-top:5px; ">
+   <div style="background-image:url({{product.image.url}});  width:100px; height:100px; background-size:cover;"></div> 
+   <div style="float:left; width:auto; text-align:center; color:rgb(106, 106, 106); margin:10px; font-size:22px;">{{product.name}} </div>   
+</div>
+{% endfor %}
+<br><br><br>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-4 col-xs-6">
-                <h1>{{ animalName.name }} </h1>
-                <font face="San-Serif">Location: {{animalName.location}}</font>
-                <h3> Products you shouldn't buy </h3>
-                <img src="{{ animalName.image.url }}" alt="" class="img-responsive">
-                {% for product in animal_product %}
-                <li>{{product.name}}</li>
-                <img src="{{ animal_product.image.url }}" alt="" class="img-responsive">
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</body>
+<div style="padding:0 4px 0 4px; margin:0 auto" id="disqus_thread"></div>
+<script>
 
-</html>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://wildlive.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+
+
+
+     <!-- <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> -->
+
+</div>
+{% endblock content%}

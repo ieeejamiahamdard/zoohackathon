@@ -14,7 +14,7 @@ def upload_location(instance, filename):
     return "%s/%s" %(instance.id, filename)
 
 class AnimalProduct(models.Model):
-    name = models.CharField(max_length=25, null=False)
+    name = models.CharField(max_length=100, null=False)
     details = models.TextField()
     image = models.ImageField(upload_to=upload_location,
             null=True,
@@ -27,8 +27,8 @@ class AnimalProduct(models.Model):
         return self.name
 
 class AnimalDb(models.Model):
-    name = models.CharField(max_length=25, null=False)
-    location = models.CharField(max_length=10, null=False)
+    name = models.CharField(max_length=100, null=False)
+    location = models.CharField(max_length=100, null=False)
     slug = models.SlugField()
     animal_product = models.ManyToManyField(AnimalProduct)
     image = models.ImageField(upload_to=upload_location,
